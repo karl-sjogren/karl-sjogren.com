@@ -1,0 +1,42 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/jekyll:1",
+  "features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"configureZshAsDefaultShell": true
+		},
+		"ghcr.io/devcontainers/features/node:1": {
+      "version": "latest"
+    }
+  },
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"rebornix.Ruby",
+
+				"usernamehw.errorlens",
+				"editorconfig.editorconfig",
+				"esbenp.prettier-vscode",
+
+				"bierner.github-markdown-preview",
+				"streetsidesoftware.code-spell-checker",
+				"znck.grammarly"
+			],
+
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "zsh",
+
+				"editor.formatOnPaste": true,
+				"editor.guides.bracketPairs": "active",
+				"debug.internalConsoleOptions": "neverOpen",
+
+				"scm.defaultViewMode": "tree",
+
+				"files.watcherExclude": {
+					"**/_site/**": true
+				}
+			}
+		}
+	}
+}
