@@ -6,7 +6,7 @@ tags: c# aspnetcore httpplatformhandler
 
 Had an interesting problem at work this morning. We were ready to deploy a new version of our ASP.Net 5 website to our staging environment and everything was looking fine both locally and on our development server. We merged it to our staging branch and pushed it to our buildserver and everything was looking fine until we tried to browse to the site and got this:
 
-![Oops.](/assets/vnext-error.png)
+![Oops.](/assets/post-images/vnext-error.png)
 
 Not much to go on there, something obviously crashed but that's it. So how do we proceed here?
 
