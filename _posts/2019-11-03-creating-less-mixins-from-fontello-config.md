@@ -1,7 +1,7 @@
 ---
 title:      "Creating LESS mixins from Fontello config"
 date:       2019-11-03 12:00:00
-categories: fontello javascript less node
+tags: fontello javascript less node
 ---
 
 [Fontello](http://fontello.com/) is a great service for managing icon fonts for
@@ -49,7 +49,7 @@ Create a new file in your project called `fontello-to-less.js` and paste this
 code into it. Adjust the part where we import the font config on line 3 if it
 doesn't match up with your workspace.
 
-{% highlight js %}
+```js
 /* global require, module */
 const fs = require('fs');
 const config = require('../fonts/config');
@@ -70,7 +70,7 @@ const fontelloToLess = function fontelloToLess(outputPath) {
 }
 
 module.exports = fontelloToLess;
-{% endhighlight %}
+```
 
 Then either create a new file to invoke the task like below or adjust it to make
 it a part of your build pipeline.
@@ -78,10 +78,10 @@ it a part of your build pipeline.
 For a simple invokation via node it could look like this (lets call this file
 `build.js`).
 
-{% highlight js %}
+```js
 const fontelloToLess = require('./fontello-to-less');
 fontelloToLess('./styles/fontello-icon-definitions.less');
-{% endhighlight %}
+```
 
 Then call it like `node build.js`.
 

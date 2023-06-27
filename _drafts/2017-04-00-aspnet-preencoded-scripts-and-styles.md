@@ -1,7 +1,8 @@
 ---
 title: "Pre-encoded scripts and styles with ASP.NET Core and Gulp"
 date: 2017-04-02 20:02:00
-categories: misc aspnet netcore gulp brotli
+tags: misc aspnet netcore gulp brotli
+category: performance
 ---
 
 Making websites fast to load has always been something I've kept close to my heart. Be it by
@@ -47,14 +48,14 @@ a new basic MVC site to get us up and running. Then we'll need to intialize our 
 As noted above, we'll use Gulp for this but we'll also need a few extra components, the below line
 will install everything we need.
 
-{% highlight shell %}
+```shell
 npm install gulp gulp-brotli gulp-clone gulp-gzip gulp-rev gulp-uglify gulp-less merge-stream --save-dev
-{% endhighlight %}
+```
 
 So when the all this finishes we can finally start on some code! Create a new file called ``gulpfile.js``
 in the root of your project and paste the following script into it.
 
-{% highlight js %}
+```js
 var gulp = require('gulp');
 var less = require('gulp-less');
 var uglify = require('gulp-uglify');
@@ -129,7 +130,7 @@ var preEncodeResources = function(baseStream, outPath) {
   // Merge the resulting streams so that we can return properly
   return merge.apply(null, streams);
 };
-{% endhighlight %}
+```
 
 This is a quite basic gulp script that compiles some LESS and then minifies some javascript,
 the interesting parts doesn't start until the ``preEncodeResource`` method at the end. What
@@ -137,12 +138,12 @@ we want to do there is to use the same stream with three different targets, regu
 gzipped and brotli encoded. To do this we'll use ``gulp-clone``to split the input stream into
 three and then merge them together with ``merge-stream`` to get get a proper return value.
 
-{% highlight html %}
+```html
 <!-- Incorrect tag-->
 <script src="~/js/site.min.js" asp-append-version="true"></script>
 <!-- Correct tag -->
 <script src="~/js/site.min.js"></script>
-{% endhighlight %}
+```
 
 ## What will we save?
 

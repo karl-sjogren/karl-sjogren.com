@@ -1,12 +1,12 @@
 ---
 title:  "Lets try Jekyll for a while!"
 date:   2016-04-02 20:02:00
-categories: all-the-little-things
+tags: all-the-little-things
 ---
 
 Seems like it's time to move to a new blog platform again. I really enjoyed [Ghost](https://ghost.org) but there was something seriously wrong with my setup.
 
-My old setup was Ghost hosted on Herokus free tier with binaries stored in AWS. It was fine when I set it up but then Heroku limited their free tiers and the AWS plugin started having problems uploaded images.
+My old setup was Ghost hosted on the Heroku free tier with binaries stored in AWS. It was fine when I set it up but then Heroku limited their free tiers and the AWS plugin started having problems uploaded images.
 
 So enter [Jekyll](https://jekyllrb.com) and GitHub Pages!
 

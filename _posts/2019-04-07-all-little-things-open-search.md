@@ -1,7 +1,7 @@
 ---
 title:      "All the little things - OpenSearch"
 date:       2019-04-07 12:00:00
-categories: opensearch c# aspnetcore saga json-ld schema.org
+tags: opensearch c# aspnetcore saga json-ld schema.org
 ---
 
 Since a huge thing in Saga is its search engine, adding an OpenSearch endpoint
@@ -15,20 +15,20 @@ site easier to understand for browers and other services.
 Then there is the user facing parts. In Firefox you get the option to add a new
 search provider when visiting a site with OpenSearch.
 
-![Add search provider in Firefox]({{ site.url }}/assets/add-search-provider.png)
+![Add search provider in Firefox]({{ site.url }}/assets/post-images/add-search-provider.png)
 
 After adding the search provider, typing a search query into the address field
 will allow you to search directly on the site by using the icons at the bottom
 of the dropdown.
 
-![Execute a search provider in Firefox]({{ site.url }}/assets/execute-search-provider.png)
+![Execute a search provider in Firefox]({{ site.url }}/assets/post-images/execute-search-provider.png)
 
 Chrome goes even further and automatically loads search providers when visting
 a site for the first time. It will then be integrated into what they call the
 "[Omnibox](https://www.chromium.org/user-experience/omnibox)" so that it can be
 used quickly with only the keyboard.
 
-![Chrome Omnibox]({{ site.url }}/assets/chrome-omnibox.gif)
+![Chrome Omnibox]({{ site.url }}/assets/post-images/chrome-omnibox.gif)
 
 So as we see this is something that we really want to have, especially if we have
 a site where searching is a huge part of the reason to visit it.
@@ -40,7 +40,7 @@ file somewhere on the site and linking it in the header, but for a CMS like Saga
 we of course needed to generate this dynamically. Since we are using ASP.Net Core
 in Saga the easiest way to do it was using a controller action.
 
-{% highlight csharp %}
+```csharp
 public class OpenSearchController : Controller {
     private readonly ISiteSettings _siteSettings;
 
@@ -64,7 +64,7 @@ public class OpenSearchController : Controller {
         return Content(xml, "application/opensearchdescription+xml");
     }
 }
-{% endhighlight %}
+```
 
 While this could have been done by building an XDocument instead, which would
 be safer, this was a quick fix early in development that has worked fine since
@@ -72,9 +72,9 @@ then.
 
 So then we just need to wire it up with a link-tag in the header template.
 
-{% highlight html %}
+```html
 <link rel="search" type="application/opensearchdescription+xml" href="/open-search" title="The Local Library" />
-{% endhighlight %}
+```
 
 And then we are done! Next time you visit the site the OpenSearch stuff will be
 available.
@@ -87,7 +87,7 @@ a later post but for now, the website search snippet is the interesting part.
 
 It is as simple as adding this snippet to your layout template.
 
-{% highlight html %}
+```html
 <script type="application/ld+json">
 {
   "potentialAction": {
@@ -100,7 +100,7 @@ It is as simple as adding this snippet to your layout template.
   "url": "https://www.example.com"
 }
 </script>
-{% endhighlight %}
+```
 
 ### Summary
 

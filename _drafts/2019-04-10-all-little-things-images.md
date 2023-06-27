@@ -1,7 +1,8 @@
 ---
 title:      "All the little things - Images"
 date:       2019-04-10 12:00:00
-categories: saga javascript service-workers performance
+tags: saga javascript service-workers
+category: performance
 ---
 
 One of my personal goals within Saga has always been to get responses out fast
@@ -38,7 +39,7 @@ browser by always limiting the width to the viewport width.
 
 ...
 
-{% highlight javascript %}
+```javascript
 var configurationUrl = '/api/configuration';
 var defaultCoverUrl = '/covers/default';
 var customCoverUrl = '/api/configuration/custom-cover';
@@ -131,7 +132,7 @@ self.addEventListener('fetch', event => {
 
   event.respondWith(promise);
 });
-{% endhighlight %}
+```
 
 ### Summary
 

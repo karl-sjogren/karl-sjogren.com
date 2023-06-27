@@ -1,7 +1,7 @@
 ---
 title:      "The great Saga"
 date:       2019-04-07 06:00:00
-categories: saga
+tags: saga
 ---
 
 Saga is a product that started development mere weeks after I joined Open
@@ -46,7 +46,7 @@ small detour of a couple of months for another project) but in the end we
 delivered something amazing. And now another three years later there are hundreds
 of library across Sweden, Norway and Finland using Saga.
 
-![Familjen Helsingborg running on Saga 3.0]({{ site.url }}/assets/bibliotekfh.png)
+![Familjen Helsingborg running on Saga 3.0]({{ site.url }}/assets/post-images/bibliotekfh.png)
 
 Above is the site for [Familjen Helsingborg](https://www.bibliotekfh.se/), a
 collaboration of 11 municipalities in Sweden running on Saga 3.0. The main layout

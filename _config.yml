@@ -29,7 +29,7 @@ description: >- # used by seo meta and the atom feed
 url: "https://karl-sjogren.com/"
 
 github:
-  username: karl-sjogren # change to your github username
+  username: karl-sjogren
 
 twitter:
   username: # change to your twitter username
@@ -41,7 +41,7 @@ social:
   email: karl.sjogren@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://github.com/karl-sjogren # change to your github homepage
+    - https://github.com/karl-sjogren
     - https://stackoverflow.com/users/547640/karl-johan-sj%c3%b6gren
 
 google_site_verification: # fill in to your verification string
@@ -155,7 +155,7 @@ defaults:
       layout: page
       permalink: /:title/
   - scope:
-      path: assets/img/favicons
+      path: assets/images/favicons
     values:
       swcache: true
   - scope:

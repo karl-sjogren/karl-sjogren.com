@@ -1,7 +1,7 @@
 ---
 title:  "Installing an Add-in Express addin using NSIS"
 date:   2015-07-31 13:06:00
-categories: nsis add-in-express
+tags: nsis add-in-express
 ---
 
 > This post was migrated from my old WordPress installation and later from my Ghost installation and was initially published back in September 2013.
@@ -12,7 +12,7 @@ Breaking the WIX-installerscript that was generated apart wasn't that hard thank
 
 **AddinInstaller.nsi**
 
-{% highlight nsis %}
+```nsis
 Section "Office Addins"
   ; To make this check you need the FindProc-plugin for NSIS and the
   ; macro defined below in the article.
@@ -49,11 +49,11 @@ Section "Office Addins"
   ; And of course, when we run the uninstaller we call adxregistrator.exe again to unregister the addin
   ExecWait "$INSTDIR\Office Addins\adxregistrator.exe /uninstall=$\"$INSTDIR\Shorthand.Core.OfficeAddins2.Addin.dll$\" /privileges=user"
 SectionEnd
-{% endhighlight %}
+```
 
 **CheckAppRunning.nsi**
 
-{% highlight nsis %}
+```nsis
 !macro CheckAppRunning ID Proc Name
   checkApp${ID}:
   FindProcDLL::FindProc "${Proc}"
@@ -62,7 +62,7 @@ SectionEnd
   goto checkApp${ID}
   notRunning${ID}:
 !macroend
-{% endhighlight %}
+```
 
 
 The CheckAppRunning code is needed if you want to check if any of the office applications are running (might interfere with the installer). You will also need to install the [FindProc-plugin](http://nsis.sourceforge.net/FindProcDLL_plug-in) into your NSIS-plugins folder.

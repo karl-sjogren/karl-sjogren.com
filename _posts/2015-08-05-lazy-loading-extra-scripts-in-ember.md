@@ -1,7 +1,7 @@
 ---
 title:  "Lazy loading external scripts in Ember"
 date:   2015-08-05 11:43:00
-categories: ember javascript
+tags: ember javascript
 ---
 When building a large Ember application you might get to a point when you feel that the initial download size is just to large. In my current project we got almost 2mb of javascript when all the templates and extra utilities are compiled and bundled. This is for an internal function so 95% of the time speed won't be a problem but as developers we strive to deliver a great experience for all our users.
 
@@ -11,7 +11,7 @@ So how can we get around adding these dependencies to `vendor.js` but still use 
 
 **app/utils/external-resource-loader.js**
 
-{% highlight js %}
+```js
 import Ember from 'ember';
 
 export var loadScriptResource = function loadScriptResource(uniqueName, path) {
@@ -52,13 +52,13 @@ export var loadStyleResource = function loadStyleResource(uniqueName, path) {
       document.getElementsByTagName('head')[0].appendChild(element);
     }, `Loading external style resource ${uniqueName} (${path})`);
 };
-{% endhighlight %}
+```
 
 Then in the route where you need the script your simply import the methods and set them up as parts of your route model.
 
 **app/routes/sauce.js**
 
-{% highlight js %}
+```js
 import Ember from 'ember';
 import { loadScriptResource, loadStyleResource } from 'sauces/utils/external-resource-loader'
 
@@ -74,7 +74,7 @@ export default Ember.Route.extend({
     });
   }
 }
-{% endhighlight %}
+```
 The name you give the script when loading it will be used to identify the script once loaded so it won't be loaded again so you can reuse the same name across several routes and it will still only be loaded once.
 
 This change saved us about 600 kilobytes on the initial load, and for users who never watch the timeline [vis.js](http://visjs.org/) will never be loaded at all.

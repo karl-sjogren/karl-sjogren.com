@@ -1,7 +1,7 @@
 ---
 title:      "Time for a change"
 date:       2019-04-07 00:00:00
-categories: saga
+tags: saga
 ---
 
 Back in January the company I have worked for the past 6 years was bought by
@@ -16,5 +16,5 @@ and some quite interesting, which is what made Saga exceptional for its purpose.
 So my hope here is to write a series of posts describing some the little things
 we've added to Saga during the years of development. Since this is a proprietary
 product I won't be able to show much actual code for stuff that are not already
-available (such as public javascripts) but I can still talk about the ideas and
+available (such as public javascript) but I can still talk about the ideas and
 concepts.
