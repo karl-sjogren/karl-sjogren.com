@@ -1,15 +1,17 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/jekyll:1",
-  "features": {
+	"image": "mcr.microsoft.com/devcontainers/jekyll:1",
+
+	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
 			"configureZshAsDefaultShell": true
 		},
 		"ghcr.io/devcontainers/features/node:1": {
-      "version": "latest"
-    }
-  },
+			"version": "latest"
+		}
+	},
 
-	// Configure tool-specific properties.
+	"postCreateCommand": "sudo apt-get install tree",
+
 	"customizations": {
 		"vscode": {
 			"extensions": [
